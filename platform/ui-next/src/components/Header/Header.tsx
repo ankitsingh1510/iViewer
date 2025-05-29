@@ -12,6 +12,7 @@ import {
 import { IconPresentationProvider } from '@ohif/ui-next';
 
 import NavBar from '../NavBar';
+import ODXLogo from '../../../assets/images/odxlogo.svg';
 
 // Todo: we should move this component to composition and remove props base
 
@@ -72,7 +73,12 @@ function Header({
             >
               {isReturnEnabled && <Icons.ArrowLeft className="text-primary ml-1 h-7 w-7" />}
               <div className="ml-1">
-                {WhiteLabeling?.createLogoComponentFn?.(React, props) || <Icons.OHIFLogo />}
+                {WhiteLabeling?.createLogoComponentFn?.(React, props) || (
+                  <span className="flex items-center">
+                    <img src={ODXLogo} className="w-[2rem] h-[2rem]" alt="ODX-Logo" />
+                    <span className="ml-2 text-white text-[2rem] leading-[2rem]">iCore</span>
+                  </span>
+                )}
               </div>
             </div>
           </div>
